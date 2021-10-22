@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ebea91-0317-4706-95f8-d7985403456a" name="Default" comment="cohort-sync1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b7ebea91-0317-4706-95f8-d7985403456a" name="Default" comment="cohort-sync2">
       <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634906448484</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cohort-sync2">
+      <created>1634907904656</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634907904656</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,16 +165,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cohort-sync" />
     <MESSAGE value="cohort-sync1" />
-    <option name="LAST_COMMIT_MESSAGE" value="cohort-sync1" />
+    <MESSAGE value="cohort-sync2" />
+    <option name="LAST_COMMIT_MESSAGE" value="cohort-sync2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="75" key="#Inspections" timestamp="1634762881612">
       <screen x="0" y="23" width="1280" height="735" />
     </state>
     <state x="274" y="75" key="#Inspections/0.23.1280.735@0.23.1280.735" timestamp="1634762881612" />
-    <state x="240" y="129" key="Vcs.Push.Dialog.v2" timestamp="1634906453789">
-      <screen x="0" y="23" width="1280" height="733" />
+    <state x="192" y="93" key="Vcs.Push.Dialog.v2" timestamp="1634907907559">
+      <screen x="0" y="0" width="1024" height="640" />
     </state>
+    <state x="192" y="93" key="Vcs.Push.Dialog.v2/-1080.-611.1080.1920/0.0.1024.640@0.0.1024.640" timestamp="1634907907559" />
     <state x="240" y="129" key="Vcs.Push.Dialog.v2/0.23.1280.733@0.23.1280.733" timestamp="1634906453789" />
     <state x="305" y="80" width="670" height="676" key="search.everywhere.popup" timestamp="1634904871700">
       <screen x="0" y="23" width="1280" height="733" />
