@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7ebea91-0317-4706-95f8-d7985403456a" name="Default" comment="cohort-sync2">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -147,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634907904656</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="cohort-sync2">
+      <created>1634908176768</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634908176768</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,10 +183,10 @@
       <screen x="0" y="23" width="1280" height="735" />
     </state>
     <state x="274" y="75" key="#Inspections/0.23.1280.735@0.23.1280.735" timestamp="1634762881612" />
-    <state x="192" y="93" key="Vcs.Push.Dialog.v2" timestamp="1634907907559">
+    <state x="192" y="93" key="Vcs.Push.Dialog.v2" timestamp="1634908182415">
       <screen x="0" y="0" width="1024" height="640" />
     </state>
-    <state x="192" y="93" key="Vcs.Push.Dialog.v2/-1080.-611.1080.1920/0.0.1024.640@0.0.1024.640" timestamp="1634907907559" />
+    <state x="192" y="93" key="Vcs.Push.Dialog.v2/-1080.-611.1080.1920/0.0.1024.640@0.0.1024.640" timestamp="1634908182415" />
     <state x="240" y="129" key="Vcs.Push.Dialog.v2/0.23.1280.733@0.23.1280.733" timestamp="1634906453789" />
     <state x="305" y="80" width="670" height="676" key="search.everywhere.popup" timestamp="1634904871700">
       <screen x="0" y="23" width="1280" height="733" />
