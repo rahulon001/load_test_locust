@@ -83,16 +83,17 @@ class QuickstartUser(SequentialTaskSet):
         """
         self.login_cms()
 
-    @task(1)
+    @task
     def user_workflow(self):
         sys.stdout.flush()
         self.cohort_sync()
         self.cohort_cron()
-
-    @task(2)
-    def user_workflow1(self):
-        sys.stdout.flush()
         self.get_coupons()
+
+    # @task
+    # def user_workflow1(self):
+    #     sys.stdout.flush()
+    #     self.get_coupons()
 
 
 class MyCMSTests(HttpUser):
