@@ -6,6 +6,9 @@ import random
 constants = {}
 baseurl_eat = "http://10.159.20.62:9000"
 baseurl_sit = "http://10.144.108.127:9000"
+baseurl_dev = "http://10.157.254.126:9001"
+
+baseurl = baseurl_dev
 
 get_coupon_parameters = [{"version": "v5", "start": 0, "end": 10},
                          {"version": "v5", "start": 0, "externalMerchantId": "100001000069383", "categoryId": 1,
@@ -15,11 +18,12 @@ get_coupon_parameters = [{"version": "v5", "start": 0, "end": 10},
 get_coupon_client = [{'x-client-type': 'Rjil_jiokart', "x-loginid": "9945240311"},
                      {'x-client-type': 'mops', "x-loginid": "9945240311"},
                      {'x-client-type': 'microsite', "x-loginid": "9945240311"}]
-mas_id_1 = ["100001000071385", "100001000069193", "100001000183843"]
+mas_id_1 = ["100001000068416","100001000068658","100001000068536","100001000068415","100001000068657","100001000068771","100001000068650","100001000068770","100001000068429"]
+mas_id_2 = ["100001000068526","100001000068405","100001000068647","100001000068767","100001000068525","100001000068404","100001000068646"]
 
 body1 = {"cohorts": [{"id": datetime.now().microsecond,
                                                   "name": "Cohort" + str(datetime.now().microsecond),
-                                                  "added_merchants": [random.choice(mas_id_1)],
+                                                  "added_merchants": [random.choice(mas_id_1), random.choice(mas_id_2)],
                                                   "removed_merchants": []}]}
 body = json.dumps(body1)
 
@@ -28,7 +32,7 @@ class QuickstartUser(HttpUser):
     wait_time = between(1, 5)
 
     def login_for_access_token(self):
-        response = self.client.post(baseurl_sit+"/legacy/login",
+        response = self.client.post(baseurl+"/legacy/login",
                                     data={'username': "super5", 'password': "foobar"},
                                     headers={
                                         'Content-Type': "application/x-www-form-urlencoded"
@@ -38,7 +42,7 @@ class QuickstartUser(HttpUser):
         print(constants["anti_forgery"])
 
     def cohort_sync(self):
-        response = self.client.post(baseurl_sit+"/coupons/v1/coupons/merchants/cohort-sync",
+        response = self.client.post(baseurl+"/coupons/v1/coupons/merchants/cohort-sync",
                                     data=body,
                                     headers={
                                         'Content-Type': 'application/json',
