@@ -42,7 +42,6 @@ class WithSession(HttpUser):
                                                  random.choice(mas_id_2)],
                              "removed_merchants": []}]}
 
-        # print("cohort_sync_request_body", body)
         response = self.client.post(base_url + "/coupons/v1/coupons/merchants/cohort-sync",
                                     data=json.dumps(body),
                                     headers={
@@ -51,24 +50,6 @@ class WithSession(HttpUser):
                                     },
                                     name="cohort_sync")
         print("cohort_sync", response.text)
-
-    def get_coupons(self):
-        get_coupon_parameters = [{"version": "v5", "start": 0, "end": 10},
-                                 {"version": "v5", "start": 0, "externalMerchantId": "100001000069383", "categoryId": 1,
-                                  "end": 10, "lat": 19.6712179806, "lng": 73.2293543592},
-                                 {"version": "v5", "start": 0, "categoryId": 1, "end": 10, "lat": 19.6712179806,
-                                  "lng": 73.2293543592}]
-
-        get_coupon_client = [
-            {'x-client-type': 'Rjil_jiokart', "x-loginid": "9945240311", 'X-Anti-Forgery': self.anti_forgery},
-            {'x-client-type': 'mops', "x-loginid": "9945240311", 'X-Anti-Forgery': self.anti_forgery},
-            {'x-client-type': 'microsite', "x-loginid": "9945240311", 'X-Anti-Forgery': self.anti_forgery}]
-
-        response = self.client.get(base_url + "/coupons/v1/coupons/",
-                                   params=random.choice(get_coupon_parameters),
-                                   headers=random.choice(get_coupon_client),
-                                   name="get_coupons")
-        print("get_coupon_api", response)
 
     def on_start(self):
         self.username, self.password = user_name.pop()
@@ -87,7 +68,6 @@ class WithSession(HttpUser):
         sys.stdout.flush()
         self.cohort_sync()
         self.cohort_cron()
-        # self.get_coupons()
 
 
 class WithoutSession(HttpUser):
