@@ -88,12 +88,3 @@ class QuickstartUser(HttpUser):
         self.cohort_sync()
         self.cohort_cron()
         self.get_coupons()
-
-    # @task
-    # def user_workflow1(self):
-    #     sys.stdout.flush()
-    #     self.get_coupons()
-
-
-# class MyCMSTests(HttpUser):
-#     wait_time = between(1, 5)
