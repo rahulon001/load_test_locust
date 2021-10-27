@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ebea91-0317-4706-95f8-d7985403456a" name="Default" comment="cohort-sync_final">
+    <list default="true" id="b7ebea91-0317-4706-95f8-d7985403456a" name="Default" comment="get coupon enhanced.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
     </list>
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635021889094</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="get coupon enhanced.">
+      <created>1635266008121</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635266008121</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,7 +232,8 @@
     <MESSAGE value="cohort-sync4" />
     <MESSAGE value="cohort-sync6" />
     <MESSAGE value="cohort-sync_final" />
-    <option name="LAST_COMMIT_MESSAGE" value="cohort-sync_final" />
+    <MESSAGE value="get coupon enhanced." />
+    <option name="LAST_COMMIT_MESSAGE" value="get coupon enhanced." />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="75" key="#Inspections" timestamp="1634762881612">
@@ -248,11 +256,12 @@
       <screen x="-1080" y="-611" width="1080" height="1920" />
     </state>
     <state width="1059" height="576" key="GridCell.Tab.0.right/-1080.-611.1080.1920/0.0.1024.640@-1080.-611.1080.1920" timestamp="1635020625563" />
-    <state x="-877" y="-332" key="Vcs.Push.Dialog.v2" timestamp="1635021894695">
-      <screen x="-1080" y="-611" width="1080" height="1920" />
+    <state x="241" y="116" key="Vcs.Push.Dialog.v2" timestamp="1635266016600">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="-877" y="-332" key="Vcs.Push.Dialog.v2/-1080.-611.1080.1920/0.0.1024.640@-1080.-611.1080.1920" timestamp="1635021894695" />
     <state x="192" y="93" key="Vcs.Push.Dialog.v2/-1080.-611.1080.1920/0.0.1024.640@0.0.1024.640" timestamp="1634908182415" />
+    <state x="241" y="116" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1635266016600" />
     <state x="240" y="129" key="Vcs.Push.Dialog.v2/0.23.1280.733@0.23.1280.733" timestamp="1634906453789" />
     <state x="-727" y="270" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634925187820">
       <screen x="-1080" y="-611" width="1080" height="1920" />

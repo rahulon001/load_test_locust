@@ -25,78 +25,79 @@ anti_forgery = 0
 cohort_id = datetime.now().microsecond
 
 
-# class WithSession(HttpUser):
-#     wait_time = between(1, 5)
-#
-#     def cohort_cron(self):
-#         response = self.client.put(base_url + "/coupons/v1/coupons/merchants/initiate-jpm-cohort-sync",
-#                                    data=json.dumps({}),
-#                                    headers={
-#                                        'X-Anti-Forgery': self.anti_forgery
-#                                    },
-#                                    name="cohort_cron")
-#         print("cohort_cron", response.text)
-#
-#     def cohort_sync(self):
-#         body = {"cohorts": [{"id": cohort_id,
-#                              "name": "Cohort" + str(cohort_id),
-#                              "added_merchants": [random.choice(mas_id_1),
-#                                                  random.choice(mas_id_2)],
-#                              "removed_merchants": []}]}
-#
-#         response = self.client.post(base_url + "/coupons/v1/coupons/merchants/cohort-sync",
-#                                     data=json.dumps(body),
-#                                     headers={
-#                                         'Content-Type': 'application/json',
-#                                         'X-Anti-Forgery': self.anti_forgery
-#                                     },
-#                                     name="cohort_sync")
-#         print("cohort_sync", response.text)
-#
-#     def cohort_update(self):
-#         body = {"cohorts": [{"id": cohort_id,
-#                              "name": "Cohort" + str(cohort_id),
-#                              "added_merchants": [random.choice(mas_id_1),
-#                                                  random.choice(mas_id_2)],
-#                              "removed_merchants": [random.choice(mas_id_1)]}]}
-#
-#         response = self.client.post(base_url + "/coupons/v1/coupons/merchants/cohort-sync",
-#                                     data=json.dumps(body),
-#                                     headers={
-#                                         'Content-Type': 'application/json',
-#                                         'X-Anti-Forgery': self.anti_forgery
-#                                     },
-#                                     name="cohort_update")
-#         print("cohort_sync", response.text)
-#
-#
-#     def on_start(self):
-#         self.username, self.password = user_name.pop()
-#         print("username{0} , password {1}".format(self.username, self.password))
-#         response = self.client.post(base_url + "/legacy/login",
-#                                     data={'username': self.username, "password": self.password},
-#                                     headers={
-#                                         'Content-Type': "application/x-www-form-urlencoded"
-#                                     },
-#                                     name="login_cms")
-#         self.anti_forgery = str(response.headers['x-anti-forgery'])
-#         print("login_cms", response.text)
-#
-#     @task(1)
-#     def user_workflow(self):
-#         sys.stdout.flush()
-#         self.cohort_sync()
-#         self.cohort_cron()
-#         self.cohort_update()
-#         self.cohort_cron()
+class WithSession(HttpUser):
+    wait_time = between(1, 5)
+
+    def cohort_cron(self):
+        response = self.client.put(base_url + "/coupons/v1/coupons/merchants/initiate-jpm-cohort-sync",
+                                   data=json.dumps({}),
+                                   headers={
+                                       'X-Anti-Forgery': self.anti_forgery
+                                   },
+                                   name="cohort_cron")
+        print("cohort_cron", response.text)
+
+    def cohort_sync(self):
+        wait_time = constant(10)
+        body = {"cohorts": [{"id": cohort_id,
+                             "name": "Cohort" + str(cohort_id),
+                             "added_merchants": [random.choice(mas_id_1),
+                                                 random.choice(mas_id_2)],
+                             "removed_merchants": []}]}
+
+        response = self.client.post(base_url + "/coupons/v1/coupons/merchants/cohort-sync",
+                                    data=json.dumps(body),
+                                    headers={
+                                        'Content-Type': 'application/json',
+                                        'X-Anti-Forgery': self.anti_forgery
+                                    },
+                                    name="cohort_sync")
+        print("cohort_sync", response.text)
+
+    def cohort_update(self):
+        body = {"cohorts": [{"id": cohort_id,
+                             "name": "Cohort" + str(cohort_id),
+                             "added_merchants": [random.choice(mas_id_1),
+                                                 random.choice(mas_id_2)],
+                             "removed_merchants": [random.choice(mas_id_1)]}]}
+
+        response = self.client.post(base_url + "/coupons/v1/coupons/merchants/cohort-sync",
+                                    data=json.dumps(body),
+                                    headers={
+                                        'Content-Type': 'application/json',
+                                        'X-Anti-Forgery': self.anti_forgery
+                                    },
+                                    name="cohort_update")
+        print("cohort_sync", response.text)
+
+    def on_start(self):
+        self.username, self.password = user_name.pop()
+        print("username{0} , password {1}".format(self.username, self.password))
+        response = self.client.post(base_url + "/legacy/login",
+                                    data={'username': self.username, "password": self.password},
+                                    headers={
+                                        'Content-Type': "application/x-www-form-urlencoded"
+                                    },
+                                    name="login_cms")
+        self.anti_forgery = str(response.headers['x-anti-forgery'])
+        print("login_cms", response.text)
+
+    @task(1)
+    def user_workflow(self):
+        sys.stdout.flush()
+        self.cohort_sync()
+        self.cohort_cron()
+        self.cohort_update()
+        self.cohort_cron()
+
 
 class WithoutSession(HttpUser):
     wait_time = constant(1)
 
     def get_coupons_1(self):
         get_coupon_parameters = [
-                                    {"version": "v5", "start": 0, "end": 10}
-                                 ]
+            {"version": "v5", "start": 0, "end": 10}
+        ]
         para = random.choice(get_coupon_parameters)
 
         get_coupon_client = [
@@ -115,9 +116,10 @@ class WithoutSession(HttpUser):
 
     def get_coupons_2(self):
         get_coupon_parameters = [
-                                 {"version": "v5", "start": 0, "externalMerchantId": random.choice(mas_id_1), "categoryId": 1,
-                                  "end": 10, "lat": 19.6712179806, "lng": 73.2293543592}
-                                 ]
+            {"version": "v5", "externalMerchantId": random.choice(mas_id_1), "start": 0, "end": 10,
+             "categoryId": 1,
+             "lat": 19.6712179806, "lng": 73.2293543592, "validFromLimit": 26 - 10 - 2021}
+        ]
         para = random.choice(get_coupon_parameters)
 
         get_coupon_client = [
@@ -136,9 +138,10 @@ class WithoutSession(HttpUser):
 
     def get_coupons_3(self):
         get_coupon_parameters = [
-                                 {"version": "v5", "start": 0, "categoryId": 1, "end": 10, "lat": 19.6712179806,
-                                  "lng": 73.2293543592}
-                                 ]
+            {"version": "v5", "start": 0, "categoryId": 1, "end": 10, "lat": 19.6712179806,
+             "lng": 73.2293543592
+             }
+        ]
         para = random.choice(get_coupon_parameters)
 
         get_coupon_client = [
@@ -157,8 +160,8 @@ class WithoutSession(HttpUser):
 
     def get_coupons_4(self):
         get_coupon_parameters = [
-                                 {"version": "v5", "start": 0, "end": 10, "query": "off"}
-                                 ]
+            {"version": "v5", "start": 0, "end": 10, "query": "off"}
+        ]
         para = random.choice(get_coupon_parameters)
 
         get_coupon_client = [
