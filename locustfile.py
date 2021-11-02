@@ -14,7 +14,7 @@ user_name = [("super5", "foobar"),
              ("harsh.super", "foobar")]
 baseurl_eat = "http://10.159.20.62:9000"
 baseurl_sit_nginx = "http://10.144.62.107:9000"
-baseurl_sit = "http://10.144.108.128:9000"
+baseurl_sit = "http://10.144.108.127:9000"
 baseurl_dev = "http://10.157.254.126:9001"
 
 """
@@ -94,7 +94,7 @@ cohort_id = datetime.now().microsecond
 
 
 class WithoutSession(HttpUser):
-    wait_time = constant(5)
+    wait_time = constant(1)
 
     def get_coupons_1(self):
         get_coupon_parameters = [
@@ -209,8 +209,8 @@ class WithoutSession(HttpUser):
         sys.stdout.flush()
         # self.get_coupons_1()
         # self.get_coupons_2()
-        # self.get_coupons_3()
-        self.get_coupons_4()
+        self.get_coupons_3()
+        # self.get_coupons_4()
         # self.b2b_replacement_api_1()
         # self.b2b_replacement_api_2()
         # self.b2b_replacement_api_3()
